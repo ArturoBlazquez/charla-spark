@@ -37,7 +37,7 @@ public class MLExample {
         
         data.show();
         
-        Dataset<Row>[] splits = data.randomSplit(new double[]{0.8, 0.6}, System.currentTimeMillis());
+        Dataset<Row>[] splits = data.randomSplit(new double[]{0.8, 0.2}, System.currentTimeMillis());
         Dataset<Row> training = splits[0];
         Dataset<Row> test = splits[1];
         
