@@ -15,7 +15,7 @@ public class SparkInit {
         
         showLogo();
         
-        SparkSession spark = SparkSession.builder().appName("db-example").master("local[*]").getOrCreate();
+        SparkSession spark = SparkSession.builder().appName("example").master("local[*]").getOrCreate();
         spark.sparkContext().setLogLevel("WARN");
         
         return spark;
