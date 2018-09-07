@@ -59,7 +59,9 @@ public class Example {
         
         //Ver el libro más largo
         Dataset<Row> bookWithCount = versesWithCount.groupBy(BOOK).agg(sum(col("palabras_por_verso")).as("palabras_por_libro"));
-        bookWithCount.groupBy(col(BOOK)).agg(max("palabras_por_libro")).show();
+        
+        bookWithCount.agg(max("palabras_por_libro")).as("palabras_por_libro").show();
+        bookWithCount.orderBy(desc("palabras_por_libro")).show(1);
         
         // DIFICIL:
         // Contar el número de veces que aparece cada palabra
